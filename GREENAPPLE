@@ -1,0 +1,50 @@
+package Testing;
+
+/**
+ *
+ * @author CHUA WEE CHAN 271948
+ */
+public class GreenApple extends Apple {
+    public GreenApple(){ //constructor sub class with no argument
+	super(); //inherit data,method from super class (constructor with no argument)
+    }
+    
+    public GreenApple(String n, int p, int q, int w){
+        super(n,p,q,w);
+        
+        setInfo(n,p,q,w);
+    }
+    
+    public void setInfo(String n,int p,int q,int w){
+        if (n.equals(null))
+            n=null;
+        else
+            n=name;
+        
+        if (p>=0)
+            p=price;
+        else
+            p=0;
+        
+        if (q>=0)
+            q=quantity;
+        else
+            q=0;
+        
+        if (w>=0)
+            w=weight;
+        else
+            w=0;
+         
+    }
+    
+    public double getTotalPrice(){
+        return weight*price;
+    }
+    
+//    public String toString() { //overriding method
+//        return super.toString()+"\nPrice per Kg \t\t: RM"+price+"\nWeight (kg) \t\t: "+weight+"\nTotal Price \t\t: RM"+getTotalPrice();
+//	        
+//    }
+    
+}
