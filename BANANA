@@ -1,0 +1,68 @@
+package Testing;
+
+/**
+ *
+ * @author CHUA WEE CHAN 271948
+ */
+public class Banana extends Fruit {
+    protected int price,quantity,weight;
+    
+    public Banana(){ //constructor sub class with no argument
+        super();
+        price=0;
+        quantity=0;
+        weight=0;
+    }
+    public Banana(String n, int p, int q, int w){ //constructor sub class with argument
+        super(n);
+        price = p;
+        quantity = q;
+        weight = w;
+        
+        setInfo(n,p,q,w);
+    }
+    
+    public void setInfo(String n,int p,int q,int w){
+        if (n.equals(null))
+            n=null;
+        else
+            n=name;
+        
+        if (p>=0)
+            p=price;
+        else
+            p=0;
+        
+        if (q>=0)
+            q=quantity;
+        else
+            q=0;
+        
+        if (w>=0)
+            w=weight;
+        else
+            w=0;
+        
+    }
+    
+    public int getPrice(){
+        return this.price;
+    }
+    
+    public int getQuantity(){
+        return this.quantity;
+    }
+    
+    public int getWeight(){
+        return this.weight;
+    }
+    
+    public int calTotalWeight(){
+        return (this.quantity*this.weight);
+    }
+    
+    public String toString() { //overriding method
+        return super.toString()+"\nPrice \t\t\t: RM"+price+"\nWeight (gm) \t\t: "+weight+"\nTotal Weight \t\t: RM"+calTotalWeight();  
+    }
+    
+}
