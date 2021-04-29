@@ -1,0 +1,68 @@
+package Testing;
+
+/**
+ *
+ * @author CHUA WEE CHAN 271948
+ */
+public class Blueberries extends Fruit {
+    private int price,quantity,weight;
+    
+    public Blueberries(){ //constructor sub class with no argument
+        super();
+        price=0;
+        quantity=0;
+        weight=0;
+    }
+    public Blueberries(String n, int p, int q, int w){ //constructor sub class with argument
+        super(n);
+        price = p;
+        quantity = q;
+        weight = w;
+        
+        setInfo(n,p,q,w);
+    }
+    
+    public void setInfo(String n,int p,int q,int w){
+        if (n.equals(null))
+            n=null;
+        else
+            n=name;
+        
+        if (p>=0)
+            p=price;
+        else
+            p=0;
+        
+        if (q>=0)
+            q=quantity;
+        else
+            q=0;
+        
+        if (w>=0)
+            w=weight;
+        else
+            w=0;
+    }
+    
+    public int getPrice(){
+        return this.price;
+    }
+    
+    public int getQuantity(){
+        return this.quantity;
+    }
+    
+    public int getWeight(){
+        return this.weight;
+    }
+    
+    public int calTotalPrice(){
+        return (this.quantity*this.price);
+    }
+    
+    public String toString() { //overriding method
+        return super.toString()+"\nPrice \t\t\t: RM"+price+"\nWeight (gm) \t\t: "+weight+"\nTotal Price \t\t: RM"+calTotalPrice();  
+    }
+    
+}
+
